@@ -1,0 +1,46 @@
+<form [formGroup]="inputForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>CARD OWNER NAME</label>
+    <input type="text" formControlName="cardOwnerName">
+    <span style="color: red" *ngIf="cardOwnerName && cardOwnerName.touched && cardOwnerName.invalid">
+      Name not valid!
+    </span>
+  </div>
+  <div>
+    <label>CARD NUMBER</label>
+    <input type="text" formControlName="cardNumber">
+    <span style="color: red" *ngIf="cardNumber && cardNumber.touched && cardNumber.invalid">
+      You must input 16 digit card number
+    </span>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <label>VALID THROUGH</label>
+      <input type="text" formControlName="expirationDate">
+      <span style="color: red" *ngIf="expirationDate && expirationDate.touched && expirationDate.invalid">
+        Valid Date not valid. Example: (MM/YY)/(01/22)
+      </span>
+    </div>
+    <!-- <mat-form-field appearance="fill">
+      <mat-label>Month and Year</mat-label>
+      <input matInput [matDatepicker]="dp" [formControl]="date">
+      <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+      <mat-datepicker #dp
+                      startView="multi-year"
+                      (yearSelected)="chosenYearHandler($event)"
+                      (monthSelected)="chosenMonthHandler($event, dp)"
+                      panelClass="example-month-picker">
+      </mat-datepicker>
+    </mat-form-field> -->
+    <div class="col-md-6">
+      <label>SECURITY CODE</label>
+      <input type="text" formControlName="securityCode">
+      <span style="color: red" *ngIf="securityCode && securityCode.touched && securityCode.invalid">
+        You must input 4 digit security code
+      </span>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit" formControlName="buttonAction">{{button}}</button>
+  <button class="btn btn-secondary" *ngIf="isEdit" type="Button" (click)="onCancel()">Cancel</button>
+</form>
+

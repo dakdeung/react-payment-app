@@ -1,0 +1,17 @@
+<div *ngIf="!isNotif" style="text-align: center;">
+  <h2 mat-dialog-title>{{message}}</h2>
+  <div mat-dialog-actions>
+    <button class="btn btn-secondary" mat-button mat-dialog-close mat-dialog-close="{{action}}">{{action}}</button>
+    <button class="btn btn-danger" mat-button mat-dialog-close cdkFocusInitial>Cancel</button>
+  </div>
+</div>
+<div *ngIf="isNotif" style="align-items: center;">
+  <h2 mat-dialog-title>{{notifikasi}}</h2>
+  <div mat-dialog-actions>
+    <!-- <button class="btn btn-secondary" mat-button mat-dialog-close mat-dialog-close="{{action}}">{{action}}</button> -->
+    <div>
+      <button class="btn btn-secondary" mat-button mat-dialog-close cdkFocusInitial>Oke</button>
+    </div>
+  </div>
+</div>
+

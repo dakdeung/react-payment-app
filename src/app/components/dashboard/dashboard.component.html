@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" style="padding: 16px;background: grey;border-radius: 5px;">
+      <div class="text-center">
+        <h1 class="text-center">Payment Detail Register <button class="btn btn-danger btn-sm" (click)="openDialog()" style="float: right;">
+          <h5><i class="bi bi-box-arrow-in-right" style="margin-right: 5px;"></i>Logout</h5>
+        </button></h1>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6" style="padding: 16px;">
+      <app-form [data]="data" [edit]="isEdit"(changeEvent)="changeEvent($event)"  ></app-form>
+    </div>
+    <div class="col-md-6">
+      <app-table [isChange]="isChange" (itemEvent)="itemEvent($event,true)"></app-table>
+    </div>
+  </div>
+</div>
